@@ -7,7 +7,7 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
   - '.'
-tags: ['$COMMIT_SHA', $(if echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" then echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z] else '$BRANCH_NAME')]
+tags: ['$COMMIT_SHA', $(if echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" then '$BRANCH_NAME' else '$BRANCH_NAME')]
 # tags: ['$COMMIT_SHA', $(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])]
 # tags: ['$COMMIT_SHA']
 images:
