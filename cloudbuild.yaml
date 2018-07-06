@@ -7,6 +7,6 @@ steps:
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
   - '.'
 # tags: ['$COMMIT_SHA','$(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])']
-tags: ['$COMMIT_SHA','$(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])']
+tags: ['$COMMIT_SHA']
 images:
 - gcr.io/$PROJECT_ID/$REPO_NAME
