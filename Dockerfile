@@ -1,3 +1,3 @@
 FROM alpine
-ADD text.txt /
+ADD . ./
 RUN echo "$(cat test.txt)"
