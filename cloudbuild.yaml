@@ -7,10 +7,10 @@ steps:
   - '-t'
   - 'gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA'
   - '-t'
-  - 'gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME'
+  - 'gcr.io/$PROJECT_ID/$REPO_NAME:$(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])'
   - '.'
 #tags: ['$COMMIT_SHA', '$BRANCH_NAME']
 #tags: ['$COMMIT_SHA', '$(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])']
 images:
 - gcr.io/$PROJECT_ID/$REPO_NAME:$COMMIT_SHA
-- gcr.io/$PROJECT_ID/$REPO_NAME:$BRANCH_NAME
+- gcr.io/$PROJECT_ID/$REPO_NAME:$(echo $BRANCH_NAME | grep -oE "(?i)dpu-*\d+" | tr [a-z] [A-Z])
